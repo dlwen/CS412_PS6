@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <button class="search-bottom" (click)="handleSearch()">Start Search</button>
+  <div class="search-result" *ngIf="sourceData.length">
+    <div class="search-title">Search Result</div>
+    <div class="result-item"  *ngFor="let item of sourceData; let i=index;">
+      <!--  -->
+      <div>City：{{item.location.name}}/{{item.location.country}}</div>
+      <div class="result-item-info">  
+        <img [src]="item.current.condition.icon">
+        <span>AirTemperature:{{item.current.temp_c}} ℃</span>
+        <span>Humidity:{{item.current.humidity}} %</span>
+        <span>Pressure:{{item.current.pressure_mb}} mb</span>
+      </div>
+    </div>  
+  </div>
+</div>
